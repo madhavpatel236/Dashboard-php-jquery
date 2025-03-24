@@ -42,33 +42,31 @@ $(document).ready(function () {
 
 // ---------------------------------------
 
-// $(document).ready(function () {
-//   $("#loginForm").submit(function (e) {
-//     let email = $("#email").val();
-//     let password = $("#password").val();
+// validation with the jquery validator
 
-//     isValid = true;
-
-//     if (email.trim() == "") {
-//       $("#email_error").text("Please enter a email.");
-//       $("#email").css({ "border-color": "red" });
-//       isValid = false;
-//     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-//       isValid = false;
-//       $("#email_error").text("Please enter a valid email address");
-//       $("#email").css({ "border-color": "red" });
-//     } else {
-//       $("#email_error").text("");
-//       $("#email").css({"border-color": ""})
-//     }
-//     if (password.trim() == "") {
-//       isValid = false;
-//       $("#password").css({ "border-color": "red" });
-//       $("#password_error").text(" Please enter a password.");
-//     }
-
-//     if (!isValid) {
-//       e.preventDefault();
-//     }
-//   });
-// });
+$("#loginForm").validate({
+  rules: {
+    firstname: {
+      required: true,
+    },
+    lastname: {
+      required: true,
+    },
+    email: {
+      required: password,
+      email: true,
+    },
+    password: {
+      required: true,
+      minlength: 6,
+    },
+  },
+  message: {
+    firstname: "please enter your firstname.",
+    lastname: "please enter your lastname",
+    email: {
+      required: " Please enter your last email address. ",
+      email: "please enter a valid email address",
+    },
+  },
+});

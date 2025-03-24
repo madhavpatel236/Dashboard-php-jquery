@@ -53,9 +53,9 @@ $(document).ready(function () {
 
   $("#addUserForm").submit(function (e) {
     let isValid =
-      validateFirstname() &
-      validateLastname() &
-      validateEmail() &
+      validateFirstname() &&
+      validateLastname() &&
+      validateEmail() &&
       validatePassword();
 
     if (!isValid) {
