@@ -47,7 +47,7 @@ class userModel
 
         if ($email === $this->admin_email && $password === $this->admin_password) {
             $_SESSION['authenticated'] = true;
-            header("Location: " . "/Dashboard/view/AdminHome.php");
+            header("Location: " . "/Dashboard-jquery/view/AdminHome.php");
         } else {
             $userCheck = "SELECT * FROM userData WHERE email = '$email' and password = '$password'";
             $userCheckResult = mysqli_query($this->isConnect, $userCheck);
@@ -55,11 +55,11 @@ class userModel
             if ($userCheckResult->num_rows > 0) {
                 while ($row = $userCheckResult->fetch_assoc()) {
                     $_SESSION['authenticated'] = true;
-                    header("Location: " . "/Dashboard/view/UserHome.php");
+                    header("Location: " . "/Dashboard-jquery/view/UserHome.php");
                 }
             } else {
                 echo 'NO user found';
-                header("Location: " . "/Dashboard/view/Error.php");
+                header("Location: " . "/Dashboard-jquery/view/Error.php");
             }
         }
     }

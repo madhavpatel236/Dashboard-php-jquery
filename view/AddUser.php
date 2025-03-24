@@ -15,6 +15,8 @@ if ($_SESSION['authenticated'] !== true) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
     <link rel="stylesheet" href="../assets/style.css">
     <script defer src="../assets/AddUserFormauth.js "></script>
 </head>

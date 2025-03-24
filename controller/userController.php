@@ -71,19 +71,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $userControllerObj = new userController();
     if (isset($_POST['submit_btn'])) {
         $userControllerObj->InsertData();
-        header("Location: " . "/Dashboard/view/AdminHome.php");
+        header("Location: " . "/Dashboard-jquery/view/AdminHome.php");
         exit;
     }
 
     if (isset($_POST['editUser'])) {
         $userControllerObj->editUserDetails();
-        header("Location: " . "/Dashboard/view/AddUser.php");
+        header("Location: " . "/Dashboard-jquery/view/AddUser.php");
         exit;
     }
 
     if (isset($_POST['deleteUser'])) {
         $userControllerObj->deleteUserDetails();
-        header("Location: " . "/Dashboard/view/AdminHome.php");
+        header("Location: " . "/Dashboard-jquery/view/AdminHome.php");
         exit;
     }
 }
